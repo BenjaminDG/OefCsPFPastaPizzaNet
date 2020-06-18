@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OefCsPFPastaPizzaNet.Gerecht">
+    <Position X="12" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAABAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Gerecht.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OefCsPFPastaPizzaNet.Drank">
+    <Position X="3.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAABAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Drank.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OefCsPFPastaPizzaNet.Frisdrank">
+    <Position X="6.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Frisdrank.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OefCsPFPastaPizzaNet.Warmedranken">
+    <Position X="6.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Warmedranken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
