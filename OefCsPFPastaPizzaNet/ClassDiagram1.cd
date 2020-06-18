@@ -6,6 +6,7 @@
       <HashCode>AAAAAAgAAAAABABEBAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
       <FileName>BesteldGerecht.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="OefCsPFPastaPizzaNet.Dessert" Collapsed="true">
     <Position X="11.75" Y="0.5" Width="1.5" />
@@ -26,28 +27,28 @@
   <Class Name="OefCsPFPastaPizzaNet.Frisdrank" Collapsed="true">
     <Position X="7.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Frisdrank.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OefCsPFPastaPizzaNet.Gerecht" Collapsed="true">
     <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAAAABAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAABAAEAAAABAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
       <FileName>Gerecht.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OefCsPFPastaPizzaNet.Pasta" Collapsed="true">
     <Position X="5.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAABAAEAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
       <FileName>Pasta.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OefCsPFPastaPizzaNet.Pizza" Collapsed="true">
     <Position X="7.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAgAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAgAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Pizza.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -61,7 +62,7 @@
   <Class Name="OefCsPFPastaPizzaNet.Warmedranken" Collapsed="true">
     <Position X="5.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Warmedranken.cs</FileName>
     </TypeIdentifier>
   </Class>

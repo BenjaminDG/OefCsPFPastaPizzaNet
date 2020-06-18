@@ -4,7 +4,7 @@ using System.Text;
 
 namespace OefCsPFPastaPizzaNet
 {
-    class BesteldGerecht  //: IBedrag
+    public class BesteldGerecht  : IBedrag
     {
         private Grootte formaatBesteldGerechtValue;
         public Gerecht Gerecht { get; set; }
