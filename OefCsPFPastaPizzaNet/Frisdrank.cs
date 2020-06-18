@@ -16,8 +16,9 @@ namespace OefCsPFPastaPizzaNet
             else { throw new Exception("Verkeerde keuze! Kies uit water, limonade of cocacola"); }
 
         }
+        public override decimal BerekenBedrag { get { return Prijs; } }
 
-        public decimal Prijs { get; set; }
+        public override string ToString() => $"{this.Naam}: {this.Prijs} EUR ";
 
     }
 }

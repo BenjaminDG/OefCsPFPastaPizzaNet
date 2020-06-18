@@ -13,4 +13,9 @@
         water, limonade, cocacola, koffie , thee
     }
 
+    public enum DessertNaam
+    {
+        Tiramisu, Ijs, Cake
+    }
+
 }

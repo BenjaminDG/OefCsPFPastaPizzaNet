@@ -18,8 +18,8 @@ namespace OefCsPFPastaPizzaNet
 
         }
 
-        public decimal Prijs { get; set; }
+        public override decimal BerekenBedrag { get { return Prijs; } }
 
-
+        public override string ToString() => $"{this.Naam}: {this.Prijs} EUR ";
     }
 }
