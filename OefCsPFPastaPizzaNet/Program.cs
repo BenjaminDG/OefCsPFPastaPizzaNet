@@ -35,6 +35,7 @@ namespace OefCsPFPastaPizzaNet
 
 
             Klant JanJanssen = new Klant { KlantID = 1, Naam = "Jan Janssen" };
+            Klant PP = new Klant { KlantID = 2, Naam = "Piet Peeters" };
 
 
             BesteldGerecht bestelling1 = new BesteldGerecht { Gerecht = margherita, FormaatBesteldGerecht = Grootte.groot, Extra = new List<Extra> { Extra.kaas, Extra.look } };
@@ -48,12 +49,12 @@ namespace OefCsPFPastaPizzaNet
             List<Bestelling> Bestellingen = new List<Bestelling>
             {
                 new Bestelling{ besteldGerecht = bestelling1, drank = water, dessert = ijs, Aantal = 2, klant = JanJanssen },
-                new Bestelling{ besteldGerecht = bestelling2, drank = water, dessert = tiramisu , Aantal = 1 , klant = JanJanssen  },
-                new Bestelling{ besteldGerecht = bestelling3, drank = thee, dessert = ijs, Aantal = 1, klant = JanJanssen },
+                new Bestelling{ besteldGerecht = bestelling2, drank = water, dessert = tiramisu , Aantal = 1 , klant = PP  },
+                new Bestelling{ besteldGerecht = bestelling3, drank = thee, dessert = ijs, Aantal = 1, klant = PP },
                 new Bestelling{ besteldGerecht = bestelling4, drank = geenDrank  ,Aantal = 1 },
                 new Bestelling{ besteldGerecht = bestelling5, drank =cocacola , dessert =null, Aantal = 1, klant = JanJanssen },
-                new Bestelling{ besteldGerecht = bestelling6, drank =cocacola , dessert =cake , Aantal = 1, klant = JanJanssen },
-                new Bestelling{ besteldGerecht = null, drank = koffie, dessert= null,  Aantal = 3 , klant = JanJanssen  }
+                new Bestelling{ besteldGerecht = bestelling6, drank =cocacola , dessert =cake , Aantal = 1, klant = PP },
+                new Bestelling{ besteldGerecht = null, drank = koffie, dessert= null,  Aantal = 3 , klant = PP  }
         };
             foreach(var bestelling in Bestellingen) { Console.WriteLine(bestelling); Console.WriteLine("*********************"); };
 
