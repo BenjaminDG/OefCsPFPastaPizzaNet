@@ -56,10 +56,73 @@ namespace OefCsPFPastaPizzaNet
                 new Bestelling{ besteldGerecht = bestelling6, drank =cocacola , dessert =cake , Aantal = 1, klant = PP },
                 new Bestelling{ besteldGerecht = null, drank = koffie, dessert= null,  Aantal = 3 , klant = PP  }
         };
-            foreach(var bestelling in Bestellingen) { Console.WriteLine(bestelling); Console.WriteLine("*********************"); };
+            /*   foreach(var bestelling in Bestellingen) { Console.WriteLine(bestelling); Console.WriteLine("*********************"); };
+            */
 
+            AlleBestellingenTonen(Bestellingen);
+            BestellingenJJTonen(JanJanssen, Bestellingen);
+            BestellingenKlantTonen(Bestellingen);
 
-            
+            //--------------------
+
+            static void BestellingenKlantTonen(List<Bestelling> Bestellingen)
+            {
+                decimal totaalBedrag = 0;
+                var perKlant =
+                    from bestellingenPerKlant in Bestellingen
+                    group bestellingenPerKlant by bestellingenPerKlant.klant
+                    into perKlantGroep
+                    select perKlantGroep;
+
+                foreach(var klanten in perKlant)
+                {
+                    Console.WriteLine("bestellingen van " + klanten.Key + ":");
+                    Console.WriteLine("");
+                    foreach (var item in klanten)
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine(item);
+                        
+                        totaalBedrag+= item.BerekenBedrag;
+                    }
+                    Console.WriteLine("------------totaal bedrag-----------");
+                    Console.WriteLine(totaalBedrag);
+                }
+
+            }
+
+             static void AlleBestellingenTonen(List<Bestelling> Bestellingen)
+            {
+                
+                int teller = 0;
+                foreach (var bestelling in Bestellingen) { teller++; Console.WriteLine(teller); Console.WriteLine("*********************"); Console.WriteLine(bestelling); Console.WriteLine("*********************"); };
+
+            }
+
+             static void BestellingenJJTonen(Klant JanJanssen, List<Bestelling>Bestellingen)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("++++Bestellingen JanJansen+++");
+                Console.WriteLine("");
+                var teller = 0;
+                decimal totaalBedrag = 0;
+                var bestellingJJ =
+                    from bestelling in Bestellingen
+                    where bestelling.klant == JanJanssen
+                    select bestelling;
+                foreach(var item in bestellingJJ)
+                {
+                    teller++;
+                    totaalBedrag += item.BerekenBedrag;
+                    Console.WriteLine("++++++++++++++++++++");
+                    Console.WriteLine(teller);
+                    Console.WriteLine(item);
+                    Console.WriteLine("++++++++++++++++++++");
+
+                }
+                Console.WriteLine("---totaal Bedrag---");
+                Console.WriteLine(totaalBedrag);
+            }
 
             
 
