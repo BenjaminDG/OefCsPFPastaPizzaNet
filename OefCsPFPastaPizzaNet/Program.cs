@@ -36,14 +36,15 @@ namespace OefCsPFPastaPizzaNet
 
             Klant JanJanssen = new Klant { KlantID = 1, Naam = "Jan Janssen" };
             Klant PP = new Klant { KlantID = 2, Naam = "Piet Peeters" };
+            Klant[] KlantenLijst = { JanJanssen, PP };
 
 
             BesteldGerecht bestelling1 = new BesteldGerecht { Gerecht = margherita, FormaatBesteldGerecht = Grootte.groot, Extra = new List<Extra> { Extra.kaas, Extra.look } };
             BesteldGerecht bestelling2 = new BesteldGerecht { Gerecht = margherita, FormaatBesteldGerecht = Grootte.klein, Extra = new List<Extra> { } };
             BesteldGerecht bestelling3 = new BesteldGerecht { Gerecht = napoli, FormaatBesteldGerecht = Grootte.groot, Extra = new List<Extra> { } };
-            BesteldGerecht bestelling4 = new BesteldGerecht { Gerecht = lasagna, FormaatBesteldGerecht = Grootte.klein, Extra = new List<Extra> {Extra.look } };
+            BesteldGerecht bestelling4 = new BesteldGerecht { Gerecht = lasagna, FormaatBesteldGerecht = Grootte.klein, Extra = new List<Extra> { Extra.look } };
             BesteldGerecht bestelling5 = new BesteldGerecht { Gerecht = carbonara, FormaatBesteldGerecht = Grootte.klein, Extra = new List<Extra> { } };
-            BesteldGerecht bestelling6 = new BesteldGerecht { Gerecht = bolognese, FormaatBesteldGerecht = Grootte.groot, Extra = new List<Extra> {Extra.kaas } };
+            BesteldGerecht bestelling6 = new BesteldGerecht { Gerecht = bolognese, FormaatBesteldGerecht = Grootte.groot, Extra = new List<Extra> { Extra.kaas } };
             //BesteldGerecht bestelling7 = new BesteldGerecht { Gerecht = , FormaatBesteldGerecht = Grootte., Extra = new List<Extra> { } };
 
             List<Bestelling> Bestellingen = new List<Bestelling>
@@ -55,13 +56,20 @@ namespace OefCsPFPastaPizzaNet
                 new Bestelling{ besteldGerecht = bestelling5, drank =cocacola , dessert =null, Aantal = 1, klant = JanJanssen },
                 new Bestelling{ besteldGerecht = bestelling6, drank =cocacola , dessert =cake , Aantal = 1, klant = PP },
                 new Bestelling{ besteldGerecht = null, drank = koffie, dessert= null,  Aantal = 3 , klant = PP  }
+
+
+
         };
             /*   foreach(var bestelling in Bestellingen) { Console.WriteLine(bestelling); Console.WriteLine("*********************"); };
             */
 
+
+
             AlleBestellingenTonen(Bestellingen);
             BestellingenJJTonen(JanJanssen, Bestellingen);
             BestellingenKlantTonen(Bestellingen);
+            KlantenLijstTekst(KlantenLijst);
+
 
             //--------------------
 
@@ -74,7 +82,7 @@ namespace OefCsPFPastaPizzaNet
                     into perKlantGroep
                     select perKlantGroep;
 
-                foreach(var klanten in perKlant)
+                foreach (var klanten in perKlant)
                 {
                     Console.WriteLine("bestellingen van " + klanten.Key + ":");
                     Console.WriteLine("");
@@ -82,8 +90,8 @@ namespace OefCsPFPastaPizzaNet
                     {
                         Console.WriteLine("");
                         Console.WriteLine(item);
-                        
-                        totaalBedrag+= item.BerekenBedrag;
+
+                        totaalBedrag += item.BerekenBedrag;
                     }
                     Console.WriteLine("------------totaal bedrag-----------");
                     Console.WriteLine(totaalBedrag);
@@ -91,15 +99,15 @@ namespace OefCsPFPastaPizzaNet
 
             }
 
-             static void AlleBestellingenTonen(List<Bestelling> Bestellingen)
+            static void AlleBestellingenTonen(List<Bestelling> Bestellingen)
             {
-                
+
                 int teller = 0;
                 foreach (var bestelling in Bestellingen) { teller++; Console.WriteLine(teller); Console.WriteLine("*********************"); Console.WriteLine(bestelling); Console.WriteLine("*********************"); };
 
             }
 
-             static void BestellingenJJTonen(Klant JanJanssen, List<Bestelling>Bestellingen)
+            static void BestellingenJJTonen(Klant JanJanssen, List<Bestelling> Bestellingen)
             {
                 Console.WriteLine("");
                 Console.WriteLine("++++Bestellingen JanJansen+++");
@@ -110,7 +118,7 @@ namespace OefCsPFPastaPizzaNet
                     from bestelling in Bestellingen
                     where bestelling.klant == JanJanssen
                     select bestelling;
-                foreach(var item in bestellingJJ)
+                foreach (var item in bestellingJJ)
                 {
                     teller++;
                     totaalBedrag += item.BerekenBedrag;
@@ -124,8 +132,48 @@ namespace OefCsPFPastaPizzaNet
                 Console.WriteLine(totaalBedrag);
             }
 
-            
 
+            //---------------
+
+            string locatie = @"C:\Data\OefCsPFPastaPizzaNet\";
+            string KlantRegel;
+            string KlantNaam;
+            int KlantID;
+
+            List<Klant> klantenLijst = new List<Klant>();
+
+
+            try
+            {
+                using (var lezer = new StreamReader(locatie + "Klanten.txt"))
+                {
+                    while ((KlantRegel = lezer.ReadLine()) != null)
+                    {
+                        string[] gegevens = KlantRegel.Split(new char[] { '#' });
+                        KlantID = int.Parse(gegevens[0]);
+                        KlantNaam = gegevens[1];
+                        klantenLijst.Add(new Klant { KlantID = KlantID, Naam = KlantNaam });
+                    }
+
+                }
+            }
+            catch (IOException) { Console.WriteLine("Fout bij het lezen van het bestand!"); }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+
+
+
+            static void KlantenLijstTekst(Klant[] klantenLijst)
+            {
+                foreach (var klant in klantenLijst) { klant.KlantGegevensWegschrijven(klant); };
+            }
+            static void GerechtenLijstTekst(Gerecht[] GerechtenLijstTekst)
+            {
+                foreach(var gerecht in GerechtenLijstTekst)
+                {
+                    gerecht.GerechtenWegschrijven();
+                }
+
+            }
         }
     }
 }
