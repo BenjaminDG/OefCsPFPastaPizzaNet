@@ -166,14 +166,14 @@ namespace OefCsPFPastaPizzaNet
             {
                 foreach (var klant in klantenLijst) { klant.KlantGegevensWegschrijven(klant); };
             }
-            static void GerechtenLijstTekst(Gerecht[] GerechtenLijstTekst)
+           /* static void GerechtenLijstTekst(Gerecht[] GerechtenLijstTekst)
             {
                 foreach(var gerecht in GerechtenLijstTekst)
                 {
                     gerecht.GerechtenWegschrijven();
                 }
-
-            }
+                
+            }*/
         }
     }
 }
