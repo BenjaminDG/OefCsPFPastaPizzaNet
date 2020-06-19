@@ -4,7 +4,7 @@ using System.Text;
 
 namespace OefCsPFPastaPizzaNet
 {
-    public class Gerecht
+    public class Gerecht : IBedrag
     {
         public string Naam { get; set; }
         public decimal Prijs { get; set; }
@@ -13,7 +13,7 @@ namespace OefCsPFPastaPizzaNet
 
         public virtual decimal BerekenBedrag { get { return Prijs; } }
 
-        public override string ToString() => $"{this.Naam}: {this.Prijs} EUR ";
+        public override string ToString() => $"{this.Naam}: ({this.Prijs} EUR) ";
         
     }
 }

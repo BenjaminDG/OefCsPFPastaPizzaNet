@@ -22,7 +22,7 @@ namespace OefCsPFPastaPizzaNet
             {
                 if (besteldGerecht != null && drank != null && dessert != null)
                 {
-                    return Math.Round(((besteldGerecht.BerekenBedrag + drank.BerekenBedrag + dessert.BerekenBedrag) * Aantal) / 1.10M, 3);
+                    return Math.Round(((besteldGerecht.BerekenBedrag + drank.BerekenBedrag + dessert.BerekenBedrag) * Aantal) / 1.10M, 2);
                 }
                 else
                 {
@@ -33,7 +33,7 @@ namespace OefCsPFPastaPizzaNet
                     }
                         if(drank != null) { totaal += drank.BerekenBedrag; }
                         if(dessert != null) { totaal += dessert.BerekenBedrag; }
-                    return Math.Round((totaal * Aantal), 3);
+                    return Math.Round((totaal * Aantal), 2);
                     
 
                 }
@@ -44,7 +44,7 @@ namespace OefCsPFPastaPizzaNet
         public override string ToString()
         {
             string klantnaam = klant?.ToString() ?? "Klant : Onbekende klant";
-            return klantnaam;
+            return $" Klant: {klant.Naam}  {besteldGerecht} + Drank:  {drank.Naam} ({drank.Prijs} EUR) Dessert:  {dessert.Naam} ({dessert.Prijs} EUR) Aantal: {Aantal}   Bedrag bestelling: {BerekenBedrag}"; //{drank.Naam} {drank.Prijs} {dessert.Naam} {dessert.Prijs} {Aantal} {BerekenBedrag}  
         }
 
     }
