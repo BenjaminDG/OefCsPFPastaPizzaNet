@@ -47,12 +47,12 @@ namespace OefCsPFPastaPizzaNet
                 new Bestelling{ besteldGerecht = bestelling1, drank = water, dessert = ijs, Aantal = 2, klant = JanJanssen },
                 new Bestelling{ besteldGerecht = bestelling2, drank = water, dessert = tiramisu , Aantal = 1 , klant = JanJanssen  },
                 new Bestelling{ besteldGerecht = bestelling3, drank = thee, dessert = ijs, Aantal = 1, klant = JanJanssen },
-                new Bestelling{ besteldGerecht = bestelling4, drank=null, dessert =null, Aantal = 1, klant = JanJanssen },
-                new Bestelling{ besteldGerecht = bestelling5, drank =cocacola , dessert =null, Aantal = 1, klant = JanJanssen },
-                new Bestelling{ besteldGerecht = bestelling6, drank =cocacola , dessert =cake , Aantal = 1, klant = JanJanssen },
-                new Bestelling{ besteldGerecht = null, drank = koffie, dessert= null,  Aantal = 3 , klant = JanJanssen  }
+               // new Bestelling{ besteldGerecht = bestelling4, drank=null, dessert =null, Aantal = 1, klant = JanJanssen },
+                //new Bestelling{ besteldGerecht = bestelling5, drank =cocacola , dessert =null, Aantal = 1, klant = JanJanssen },
+                //new Bestelling{ besteldGerecht = bestelling6, drank =cocacola , dessert =cake , Aantal = 1, klant = JanJanssen },
+               // new Bestelling{ besteldGerecht = null, drank = koffie, dessert= null,  Aantal = 3 , klant = JanJanssen  }
         };
-            foreach(var bestelling in Bestellingen) { Console.WriteLine(bestelling); };
+            foreach(var bestelling in Bestellingen) { Console.WriteLine(bestelling); Console.WriteLine("*********************"); };
 
 
             
