@@ -19,7 +19,10 @@ namespace OefCsPFPastaPizzaNet
                     Naam = naam;
                     Prijs = 2M;
                 }
-                else { throw new Exception("Verkeerde keuze! Kies uit Ijs, Tiramisu of Cake"); }
+                else
+                {
+                    
+                }
 
 
             }

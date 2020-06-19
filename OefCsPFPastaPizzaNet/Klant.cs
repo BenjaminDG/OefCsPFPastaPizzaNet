@@ -8,5 +8,9 @@ namespace OefCsPFPastaPizzaNet
     {
         public int KlantID { get; set; }
         public string Naam { get; set; }
+        public override string ToString()
+        {
+            return $"{Naam}";
+        }
     }
 }

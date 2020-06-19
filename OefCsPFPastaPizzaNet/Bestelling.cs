@@ -44,7 +44,12 @@ namespace OefCsPFPastaPizzaNet
         public override string ToString()
         {
             string klantnaam = klant?.ToString() ?? "Klant : Onbekende klant";
-            return $" Klant: {klant.Naam}  {besteldGerecht} + Drank:  {drank.Naam} ({drank.Prijs} EUR) Dessert:  {dessert.Naam} ({dessert.Prijs} EUR) Aantal: {Aantal}   Bedrag bestelling: {BerekenBedrag}"; //{drank.Naam} {drank.Prijs} {dessert.Naam} {dessert.Prijs} {Aantal} {BerekenBedrag}  
+            string dranknaam = drank?.ToString() ?? "drank : **";
+            string dessertnaam = dessert?.ToString() ?? "dessert: **" ;
+            
+            
+
+            return $" Klant: {klantnaam}  {besteldGerecht} + Drank:  {dranknaam} ({drank.Prijs} EUR) Dessert:  {dessertnaam}  Aantal: {Aantal}   Bedrag bestelling: {BerekenBedrag}"; //{drank.Naam} {drank.Prijs} {dessert.Naam} {dessert.Prijs} {Aantal} {BerekenBedrag}  
         }
 
     }

@@ -3,7 +3,7 @@
   <Class Name="OefCsPFPastaPizzaNet.BesteldGerecht">
     <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgAAAAABABEBAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAABQBEBAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
       <FileName>BesteldGerecht.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -53,18 +53,18 @@
       <FileName>Pizza.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OefCsPFPastaPizzaNet.Program" Collapsed="true">
-    <Position X="12.25" Y="1" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Program.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="OefCsPFPastaPizzaNet.Warmedranken" Collapsed="true">
     <Position X="4.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Warmedranken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OefCsPFPastaPizzaNet.Program" Collapsed="true">
+    <Position X="12.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="OefCsPFPastaPizzaNet.Grootte" Collapsed="true">
@@ -84,7 +84,7 @@
   <Enum Name="OefCsPFPastaPizzaNet.DrankSoort" Collapsed="true">
     <Position X="11.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAACAAAAAAAAAAgAAAAAAAAAAAAIAAAACAAAAA=</HashCode>
+      <HashCode>AAIAAAAACAACAAAAAAAgAAAAAAAAAAAAIAAAACAAAAA=</HashCode>
       <FileName>Enums.cs</FileName>
     </TypeIdentifier>
   </Enum>

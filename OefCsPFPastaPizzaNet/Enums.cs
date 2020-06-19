@@ -10,12 +10,12 @@
     }
     public enum DrankSoort
     {
-        water, limonade, cocacola, koffie , thee
+        water, limonade, cocacola, koffie , thee, geendrank
     }
 
     public enum DessertNaam
     {
-        Tiramisu, Ijs, Cake
+        Tiramisu, Ijs, Cake, geen 
     }
 
 }
