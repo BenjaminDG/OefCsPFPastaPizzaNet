@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 namespace OefCsPFPastaPizzaNet
 {
@@ -50,6 +51,51 @@ namespace OefCsPFPastaPizzaNet
             
 
             return $" Klant: {klantnaam}  {besteldGerecht} + Drank:  {dranknaam} ({drank.Prijs} EUR) Dessert:  {dessertnaam}  Aantal: {Aantal}   Bedrag bestelling: {BerekenBedrag}"; //{drank.Naam} {drank.Prijs} {dessert.Naam} {dessert.Prijs} {Aantal} {BerekenBedrag}  
+        }
+
+        public void BestellingenWegschrijven(Bestelling bestelling)
+        {
+            string locatie = @"C:\Data\OefCsPFPastaPizzaNet\";
+            StringBuilder BestellingRegel;
+            try
+            {
+                using (var schrijver = new StreamWriter(locatie + "Bestellingen.txt", true))
+                {
+
+
+                    BestellingRegel = new StringBuilder();
+                    if(klant == null)
+                    {
+                        BestellingRegel.Append("0#");
+                    }
+                    else { BestellingRegel.Append(klant.KlantID + "#"); }
+
+                    if(besteldGerecht == null) { BestellingRegel.Append(" # "); }
+                    else { BestellingRegel.Append(besteldGerecht.Gerecht.Naam + "--" + besteldGerecht.FormaatBesteldGerecht + "--" + besteldGerecht.Extra.Count + "--" + string.Join("-", besteldGerecht.Extra)); }
+                    if(drank == null) { BestellingRegel.Append(" # "); }
+                    else
+                    {
+                        if(drank is Frisdrank) { BestellingRegel.Append("F--" + drank.Naam + " # "); }
+                        else { BestellingRegel.Append("W--" + drank.Naam + " # "); }
+                    }
+                    if(dessert == null) { BestellingRegel.Append(" # "); }
+                    else { BestellingRegel.Append(dessert.Naam + " # "); }
+                    if (Aantal == 0) { BestellingRegel.Append("1"); }
+                    else { BestellingRegel.Append(bestelling.Aantal); }
+                    schrijver.WriteLine(BestellingRegel);
+                }
+            }
+            catch (IOException)
+            {
+                Console.WriteLine("Fout bij het schrijven naar het bestand!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            
+
         }
 
     }

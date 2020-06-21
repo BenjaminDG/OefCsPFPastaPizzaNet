@@ -34,7 +34,7 @@
   <Class Name="OefCsPFPastaPizzaNet.Gerecht" Collapsed="true">
     <Position X="1" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAABAAEAAAABAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAABAAEAAAABAAAAAAAIAAAAAACAAAAAAA=</HashCode>
       <FileName>Gerecht.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -42,14 +42,14 @@
   <Class Name="OefCsPFPastaPizzaNet.Pasta" Collapsed="true">
     <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAABAAEAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAABAAEAAAAAAAAAAAAAAAAAAACIAAAAAA=</HashCode>
       <FileName>Pasta.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OefCsPFPastaPizzaNet.Pizza" Collapsed="true">
     <Position X="2.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAgAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAgAAAABAAEAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Pizza.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -60,7 +60,7 @@
       <FileName>Warmedranken.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OefCsPFPastaPizzaNet.Program" Collapsed="true">
+  <Class Name="OefCsPFPastaPizzaNet.Program">
     <Position X="12.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
@@ -91,7 +91,7 @@
   <Enum Name="OefCsPFPastaPizzaNet.DessertNaam" Collapsed="true">
     <Position X="10" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAAAAAAAAAAAAAAAgAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAgAAgAAAAAAAAAAQAAAAAAA=</HashCode>
       <FileName>Enums.cs</FileName>
     </TypeIdentifier>
   </Enum>

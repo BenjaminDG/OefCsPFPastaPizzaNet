@@ -1,0 +1,15 @@
+pizza :  # Pizza Margherita # 8 # 
+pizza :  # Pizza Napoli # 10 # 
+pasta: #  Lasagna # 15.00 # 
+pasta: #  Spaghetti Carbonara # 13.00 # 
+pasta: # Spaghetti Bolognese # 12.00 # 
+pizza :  # Pizza Margherita # 8 # 
+pizza :  # Pizza Napoli # 10 # 
+pasta: #  Lasagna # 15.00 # 
+pasta: #  Spaghetti Carbonara # 13.00 # 
+pasta: # Spaghetti Bolognese # 12.00 # 
+pizza :  # Pizza Margherita # 8 # 
+pizza :  # Pizza Napoli # 10 # 
+pasta: #  Lasagna # 15.00 # 
+pasta: #  Spaghetti Carbonara # 13.00 # 
+pasta: # Spaghetti Bolognese # 12.00 # 

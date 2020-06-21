@@ -17,29 +17,9 @@ namespace OefCsPFPastaPizzaNet
         public override string ToString() => $"{this.Naam}: ({this.Prijs} EUR) ";
 
 
-        public void GerechtenWegschrijven(Gerecht gerecht)
+        public virtual void GerechtenWegschrijven()
         {
-            string locatie = @"C:\Data\OefCsPFPastaPizzaNet\";
-            StringBuilder GerechtRegel;
-            try
-            {
-                using (var schrijver = new StreamWriter(locatie + "Gerechten.txt"))
-                {
-
-
-                    GerechtRegel = new StringBuilder();
-                    GerechtRegel.Append(gerecht +" # " + gerecht.Naam + " # " + gerecht.Prijs + " # " );
-                    schrijver.WriteLine(GerechtRegel);
-                }
-            }
-            catch (IOException)
-            {
-                Console.WriteLine("Fout bij het schrijven naar het bestand!");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            
 
         }
 

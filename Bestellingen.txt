@@ -1,0 +1,21 @@
+1#Pizza Margherita--groot--2--kaas-lookF--water # Ijs # 2
+2#Pizza Margherita--klein--0--F--water # Tiramisu # 1
+2#Pizza Napoli--groot--0--W--thee # Ijs # 1
+0# Lasagna--klein--1--lookF--geendrank #  # 1
+1# Spaghetti Carbonara--klein--0--F--cocacola #  # 1
+2#Spaghetti Bolognese--groot--1--kaasF--cocacola # Cake # 1
+2# # W--koffie #  # 3
+1#Pizza Margherita--groot--2--kaas-lookF--water # Ijs # 2
+2#Pizza Margherita--klein--0--F--water # Tiramisu # 1
+2#Pizza Napoli--groot--0--W--thee # Ijs # 1
+0# Lasagna--klein--1--lookF--geendrank #  # 1
+1# Spaghetti Carbonara--klein--0--F--cocacola #  # 1
+2#Spaghetti Bolognese--groot--1--kaasF--cocacola # Cake # 1
+2# # W--koffie #  # 3
+1#Pizza Margherita--groot--2--kaas-lookF--water # Ijs # 2
+2#Pizza Margherita--klein--0--F--water # Tiramisu # 1
+2#Pizza Napoli--groot--0--W--thee # Ijs # 1
+0# Lasagna--klein--1--lookF--geendrank #  # 1
+1# Spaghetti Carbonara--klein--0--F--cocacola #  # 1
+2#Spaghetti Bolognese--groot--1--kaasF--cocacola # Cake # 1
+2# # W--koffie #  # 3

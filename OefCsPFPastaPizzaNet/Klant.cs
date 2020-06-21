@@ -25,9 +25,9 @@ namespace OefCsPFPastaPizzaNet
             StringBuilder KlantRegel;
             try
             {
-                using (var schrijver = new StreamWriter(locatie + "Klanten.txt"))
+                using (var schrijver = new StreamWriter(locatie + "Klanten.txt", true))
                 {
-                    
+
                     
                         KlantRegel = new StringBuilder();
                         KlantRegel.Append(klant.KlantID + " # " +klant.Naam);
@@ -44,41 +44,6 @@ namespace OefCsPFPastaPizzaNet
             }
 
         }
-
-
-        
-        
-        
-        
-
-      /*  public void KlantGegevensInlezen(Klant klant)
-        {
-            string locatie = @"C:\Data\OefCsPFPastaPizzaNet\";
-            string KlantRegel;
-            string KlantNaam;
-            int KlantID;
-
-            List<Klant> klantenLijst = new List<Klant>();
-
-
-            try
-            {
-                using (var lezer = new StreamReader(locatie + "Klanten.txt"))
-                {
-                    while ((KlantRegel = lezer.ReadLine()) != null)
-                    {
-                        string[] gegevens = KlantRegel.Split(new Char[] { '#' });
-                        KlantID = int.Parse(gegevens[0]);
-                        KlantNaam = gegevens[1];
-                        klantenLijst.Add(new Klant { KlantID = KlantID, Naam = KlantNaam });
-                    }
-                    Console.WriteLine("------------------------------------------------------");
-
-                }
-            }
-            catch (IOException) { Console.WriteLine("Fout bij het lezen van het bestand!"); }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
-        } */
 
     }
 }
