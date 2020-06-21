@@ -25,7 +25,7 @@ namespace OefCsPFPastaPizzaNet
         {
             if(Extra.Count == 0)
             {
-                return  $"Gerecht :{this.Gerecht.Naam}    gerecht prijs:  ({this.Gerecht.Prijs} EUR )   ( {this.FormaatBesteldGerecht } )   ";
+                return  $"Gerecht :{this.Gerecht.Naam}    gerecht prijs:  ({this.Gerecht.Prijs} EUR )    ( {this.FormaatBesteldGerecht } )   " ;
             }
             else
             {

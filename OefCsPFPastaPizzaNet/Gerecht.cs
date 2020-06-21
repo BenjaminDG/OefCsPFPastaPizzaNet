@@ -14,7 +14,7 @@ namespace OefCsPFPastaPizzaNet
 
         public virtual decimal BerekenBedrag { get { return Prijs; } }
 
-        public override string ToString() => $"{this.Naam}: ({this.Prijs} EUR) ";
+        //public override string ToString() => $"{this.Naam}: ({this.Prijs} EUR)  ";
 
 
         public virtual void GerechtenWegschrijven()

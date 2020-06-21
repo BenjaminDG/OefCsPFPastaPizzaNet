@@ -55,7 +55,8 @@ namespace OefCsPFPastaPizzaNet
                 new Bestelling{ besteldGerecht = bestelling4, drank = geenDrank  ,Aantal = 1 },
                 new Bestelling{ besteldGerecht = bestelling5, drank =cocacola , dessert =null, Aantal = 1, klant = JanJanssen },
                 new Bestelling{ besteldGerecht = bestelling6, drank =cocacola , dessert =cake , Aantal = 1, klant = PP },
-                new Bestelling{ besteldGerecht = null, drank = koffie, dessert= null,  Aantal = 3 , klant = PP  }
+                new Bestelling{ besteldGerecht = null, drank = koffie, dessert= null,  Aantal = 3 , klant = PP  },
+                new Bestelling{drank = geenDrank,dessert = tiramisu ,Aantal=1, klant = JanJanssen}
 
 
 

@@ -25,9 +25,8 @@ namespace OefCsPFPastaPizzaNet
                 
                 if (besteldGerecht != null && drank != null && dessert != null)
                 {
-                    decimal bestellingSubTotaal = (besteldGerecht.BerekenBedrag + drank.BerekenBedrag + dessert.BerekenBedrag) * Aantal;
-                    decimal korting = (bestellingSubTotaal / 100) * 10;
-                    return Math.Round(((besteldGerecht.BerekenBedrag + drank.BerekenBedrag + dessert.BerekenBedrag)* Aantal) - korting, 2);
+                   
+                    return Math.Round(((besteldGerecht.BerekenBedrag + drank.BerekenBedrag + dessert.BerekenBedrag)* Aantal)*0.90m, 2);
                 }
                 else
                 {
@@ -51,11 +50,10 @@ namespace OefCsPFPastaPizzaNet
             string klantnaam = klant?.ToString() ?? "Klant : Onbekende klant";
             string dranknaam = drank?.ToString() ?? "drank : **";
             string dessertnaam = dessert?.ToString() ?? "dessert: **" ;
-            
-            
-            
 
-            return $" Klant: {klantnaam}  {besteldGerecht}  Drank:  {dranknaam} ({drank.Prijs} EUR) Dessert:  {dessertnaam}  Aantal: {Aantal}   Bedrag bestelling: {BerekenBedrag}"; //{drank.Naam} {drank.Prijs} {dessert.Naam} {dessert.Prijs} {Aantal} {BerekenBedrag}  
+           
+
+            return $" Klant: {klantnaam} '\n' {besteldGerecht} '\n' Drank:  {dranknaam} ({drank.Prijs} EUR) Dessert:  {dessertnaam}  Aantal: {Aantal}   Bedrag bestelling: {BerekenBedrag}"; //{drank.Naam} {drank.Prijs} {dessert.Naam} {dessert.Prijs} {Aantal} {BerekenBedrag}  
         }
 
         public void BestellingenWegschrijven(Bestelling bestelling)
@@ -69,7 +67,8 @@ namespace OefCsPFPastaPizzaNet
 
 
                     BestellingRegel = new StringBuilder();
-                    if(klant == null)
+                    
+                    if (klant == null)
                     {
                         BestellingRegel.Append("0#");
                     }
