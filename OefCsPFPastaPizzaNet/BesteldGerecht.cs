@@ -18,18 +18,18 @@ namespace OefCsPFPastaPizzaNet
         }
 
             
-        public  decimal BerekenBedrag { get { return Gerecht.BerekenBedrag + Extra.Count  ; } }
+        public  decimal BerekenBedrag { get { return Gerecht.BerekenBedrag + Extra.Count + Formaatprijs(FormaatBesteldGerecht)  ; } }
 
 
         public override string ToString() 
         {
-            if(Extra.Count >= 0)
+            if(Extra.Count == 0)
             {
                 return  $"Gerecht :{this.Gerecht.Naam}    gerecht prijs:  ({this.Gerecht.Prijs} EUR )   ( {this.FormaatBesteldGerecht } )   ";
             }
             else
             {
-                return $"Gerecht :{this.Gerecht.Naam}    gerecht prijs:  ({this.Gerecht.Prijs} EUR )   ( {this.FormaatBesteldGerecht } )   " + string.Join(" ", Extra);
+                return $"Gerecht :{this.Gerecht.Naam}    gerecht prijs:  ({this.Gerecht.Prijs} EUR )   ( {this.FormaatBesteldGerecht } )   " + string.Join(" ", this.Extra)+$" ({this.BerekenBedrag})";
             }
         }
         

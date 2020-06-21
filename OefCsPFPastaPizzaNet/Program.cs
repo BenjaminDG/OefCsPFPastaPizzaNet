@@ -103,17 +103,6 @@ namespace OefCsPFPastaPizzaNet
 
             
 
-
-
-
-
-            //--------------------
-
-
-
-
-
-
             //-------------------
             static void BestellingenKlantTonen(List<Bestelling> Bestellingen)
             {
