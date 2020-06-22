@@ -53,7 +53,7 @@ namespace OefCsPFPastaPizzaNet
 
            
 
-            return $" Klant: {klantnaam} '\n' {besteldGerecht} '\n' Drank:  {dranknaam} ({drank.Prijs} EUR) Dessert:  {dessertnaam}  Aantal: {Aantal}   Bedrag bestelling: {BerekenBedrag}"; //{drank.Naam} {drank.Prijs} {dessert.Naam} {dessert.Prijs} {Aantal} {BerekenBedrag}  
+            return $" Klant: {klantnaam} '\n' {besteldGerecht} '\n' Drank:  {dranknaam} ({drank.Prijs} EUR) Dessert:  {dessertnaam}  Aantal: {Aantal}   Bedrag bestelling: {BerekenBedrag}";   
         }
 
         public void BestellingenWegschrijven(Bestelling bestelling)
