@@ -10,7 +10,7 @@ namespace OefCsPFPastaPizzaNet
         public List<string> Onderdelen { get; set; }
         public override decimal BerekenBedrag { get { return Prijs; } }
 
-        public override string ToString() => $"{this.Naam} {this.Prijs} EUR" +String.Join(":", Onderdelen);
+        public override string ToString() => $"{this.Naam} {this.Prijs} EUR " +String.Join(", ", Onderdelen);
 
 
 

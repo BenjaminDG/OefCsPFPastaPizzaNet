@@ -14,9 +14,7 @@ namespace OefCsPFPastaPizzaNet
         {
             return $"{Naam}";
         }
-
-        
-         
+ 
         //----------
 
          public void KlantGegevensWegschrijven(Klant klant)
@@ -26,9 +24,7 @@ namespace OefCsPFPastaPizzaNet
             try
             {
                 using (var schrijver = new StreamWriter(locatie + "Klanten.txt", true))
-                {
-
-                    
+                {   
                         KlantRegel = new StringBuilder();
                         KlantRegel.Append(klant.KlantID + " # " +klant.Naam);
                         schrijver.WriteLine(KlantRegel);                    

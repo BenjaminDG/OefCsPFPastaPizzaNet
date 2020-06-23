@@ -5,7 +5,7 @@ using System.IO;
 
 namespace OefCsPFPastaPizzaNet
 {
-    class Program
+   public class Program
     {
         static void Main(string[] args)
         {
@@ -45,8 +45,7 @@ namespace OefCsPFPastaPizzaNet
             BesteldGerecht bestelling4 = new BesteldGerecht { Gerecht = lasagna, FormaatBesteldGerecht = Grootte.klein, Extra = new List<Extra> { Extra.look } };
             BesteldGerecht bestelling5 = new BesteldGerecht { Gerecht = carbonara, FormaatBesteldGerecht = Grootte.klein, Extra = new List<Extra> { } };
             BesteldGerecht bestelling6 = new BesteldGerecht { Gerecht = bolognese, FormaatBesteldGerecht = Grootte.groot, Extra = new List<Extra> { Extra.kaas } };
-            //BesteldGerecht bestelling7 = new BesteldGerecht { Gerecht = , FormaatBesteldGerecht = Grootte., Extra = new List<Extra> { } };
-
+            
             List<Bestelling> Bestellingen = new List<Bestelling>
             {
                 new Bestelling{ besteldGerecht = bestelling1, drank = water, dessert = ijs, Aantal = 2, klant = JanJanssen },
@@ -58,14 +57,9 @@ namespace OefCsPFPastaPizzaNet
                 new Bestelling{ besteldGerecht = null, drank = koffie, dessert= null,  Aantal = 3 , klant = PP  },
                 new Bestelling{drank = geenDrank,dessert = tiramisu ,Aantal=1, klant = JanJanssen}
 
-
-
-        };
-            
-            
-
-
-
+            };
+                
+        
             AlleBestellingenTonen(Bestellingen);
             BestellingenJJTonen(JanJanssen, Bestellingen);
             BestellingenKlantTonen(Bestellingen);
@@ -81,19 +75,13 @@ namespace OefCsPFPastaPizzaNet
             List<Bestelling> bestellingLijst = new List<Bestelling>();
             string BestellingRegel;
             
-
             
-
-
             try
             {
                 using (var lezer = new StreamReader(locatieBestelling + "Bestellingen.txt"))
                 {
                     while ((BestellingRegel = lezer.ReadLine()) != null)
-                    {
-                        
-                        Console.WriteLine(BestellingRegel);
-                        
+                    {   Console.WriteLine(BestellingRegel);
                        
                     }
 
@@ -105,7 +93,7 @@ namespace OefCsPFPastaPizzaNet
             
 
             //-------------------
-            static void BestellingenKlantTonen(List<Bestelling> Bestellingen)
+             static void BestellingenKlantTonen(List<Bestelling> Bestellingen)
             {
                 decimal totaalBedrag = 0;
                 var perKlant =
@@ -164,13 +152,7 @@ namespace OefCsPFPastaPizzaNet
                 Console.WriteLine(totaalBedrag);
             }
 
-
             //---------------
-
-           
-
-
-
             static void KlantenLijstTekst(Klant[] klantenLijst)
             {
                 foreach (var klant in klantenLijst) { klant.KlantGegevensWegschrijven(klant); };

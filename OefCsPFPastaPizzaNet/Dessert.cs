@@ -19,9 +19,7 @@ namespace OefCsPFPastaPizzaNet
                     Naam = naam;
                     Prijs = 2M;
                 }
-                
-
-
+       
             }
         }
 

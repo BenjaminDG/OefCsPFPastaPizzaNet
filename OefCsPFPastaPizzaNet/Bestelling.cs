@@ -14,8 +14,6 @@ namespace OefCsPFPastaPizzaNet
 
         public decimal Aantal { get; set; }
 
-        
-
 
         public virtual decimal BerekenBedrag
         {  

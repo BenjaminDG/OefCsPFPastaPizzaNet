@@ -25,11 +25,11 @@ namespace OefCsPFPastaPizzaNet
         {
             if(Extra.Count == 0)
             {
-                return  Gerecht + $"  gerecht prijs:  ({this.Gerecht.Prijs} EUR )    ( {this.FormaatBesteldGerecht } )   " ;
+                return  Gerecht + $"  gerecht prijs:  ({this.Gerecht.Prijs} EUR  )    ( {this.FormaatBesteldGerecht } )   " ;
             }
             else
             {
-                return $"Gerecht :{this.Gerecht.Naam}    gerecht prijs:  ({this.Gerecht.Prijs} EUR )   ( {this.FormaatBesteldGerecht } )   " + string.Join(" ", this.Extra)+$" ({this.BerekenBedrag})";
+                return "Gerecht :"+ Gerecht + $"({this.Gerecht.Prijs} EUR )   ( {this.FormaatBesteldGerecht } )   " + string.Join(" extra ", this.Extra)+$" ({this.BerekenBedrag})";
             }
         }
         
