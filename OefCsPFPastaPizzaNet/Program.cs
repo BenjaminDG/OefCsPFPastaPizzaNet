@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
+using OefCsPFPastaPizzaNet.Enums;
 
 namespace OefCsPFPastaPizzaNet
 {
@@ -21,17 +22,17 @@ namespace OefCsPFPastaPizzaNet
             Gerecht[] lijstgerechten = { margherita, napoli, lasagna, carbonara, bolognese };
 
 
-            Frisdrank water = new Frisdrank(DrankSoort.water);
-            Frisdrank cocacola = new Frisdrank(DrankSoort.cocacola);
-            Frisdrank geenDrank = new Frisdrank(DrankSoort.geendrank);
+            Frisdrank water = new Frisdrank(drank.water);
+            Frisdrank cocacola = new Frisdrank(drank.cocacola);
+            Frisdrank geenDrank = new Frisdrank(drank.geendrank);
 
 
-            Warmedranken thee = new Warmedranken(DrankSoort.thee);
-            Warmedranken koffie = new Warmedranken(DrankSoort.koffie);
+            Warmedrank thee = new Warmedrank(drank.thee);
+            Warmedrank koffie = new Warmedrank(drank.koffie);
 
-            Dessert ijs = new Dessert(DessertNaam.Ijs);
-            Dessert tiramisu = new Dessert(DessertNaam.Tiramisu);
-            Dessert cake = new Dessert(DessertNaam.Cake);
+            Dessert ijs = new Dessert(dessert.Ijs);
+            Dessert tiramisu = new Dessert(dessert.Tiramisu);
+            Dessert cake = new Dessert(dessert.Cake);
 
             
             Klant JanJanssen = new Klant { KlantID = 1, Naam = "Jan Janssen" };
@@ -63,32 +64,12 @@ namespace OefCsPFPastaPizzaNet
             AlleBestellingenTonen(Bestellingen);
             BestellingenJJTonen(JanJanssen, Bestellingen);
             BestellingenKlantTonen(Bestellingen);
-            KlantenLijstTekst(KlantenLijst);
-            GerechtenLijstTekst(lijstgerechten);
-            BestellingLijstTekst(Bestellingen);
-
+            
            
             //----------------------
 
 
-            string locatieBestelling = @"C:\Data\OefCsPFPastaPizzaNet\";
-            List<Bestelling> bestellingLijst = new List<Bestelling>();
-            string BestellingRegel;
             
-            
-            try
-            {
-                using (var lezer = new StreamReader(locatieBestelling + "Bestellingen.txt"))
-                {
-                    while ((BestellingRegel = lezer.ReadLine()) != null)
-                    {   Console.WriteLine(BestellingRegel);
-                       
-                    }
-
-                }
-            }
-            catch (IOException) { Console.WriteLine("Fout bij het lezen van het bestand!"); }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
 
             
 
@@ -153,28 +134,7 @@ namespace OefCsPFPastaPizzaNet
             }
 
             //---------------
-            static void KlantenLijstTekst(Klant[] klantenLijst)
-            {
-                foreach (var klant in klantenLijst) { klant.KlantGegevensWegschrijven(klant); };
-            }
-
-            static void GerechtenLijstTekst(Gerecht[] lijstgerechten)
-            {
-                foreach(var gerecht in lijstgerechten)
-                {
-                    gerecht.GerechtenWegschrijven();
-                }
-                
-            }
-
-            static void BestellingLijstTekst(List<Bestelling> Bestellingen)
-            {
-                foreach(var bestelling in Bestellingen)
-                {
-                    bestelling.BestellingenWegschrijven(bestelling);
-                }
-            }
-
+            
         }
     }
 }

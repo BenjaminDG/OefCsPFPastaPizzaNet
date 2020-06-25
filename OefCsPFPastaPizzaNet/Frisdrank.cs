@@ -1,21 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using OefCsPFPastaPizzaNet.Enums;
+
 
 namespace OefCsPFPastaPizzaNet
 {
     public class Frisdrank :Drank
     {
-        public Frisdrank(DrankSoort naam)
+        public Frisdrank(drank naam)
         {
-            if (naam == DrankSoort.water || naam == DrankSoort.limonade || naam == DrankSoort.cocacola)
+            if (naam == drank.water || naam == drank.limonade || naam == drank.cocacola)
             {
                 Naam = naam;
                 Prijs = 2M;
             }
             else
             {
-                if (naam == DrankSoort.geendrank)  
+                if (naam == drank.geendrank)  
                 {
                     Naam = naam;
                     Prijs = 0m;
@@ -23,7 +25,7 @@ namespace OefCsPFPastaPizzaNet
             }
 
         }
-        public override decimal BerekenBedrag { get { return Prijs; } }
+       
 
         public override string ToString() => $"{this.Naam}: {this.Prijs} EUR ";
 

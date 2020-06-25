@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using drank = OefCsPFPastaPizzaNet.Enums.drank;
 
 namespace OefCsPFPastaPizzaNet
 {
     public class Drank: IBedrag
     {
-        public DrankSoort Naam { get; set; }
+        public drank Naam { get; set; }
         public decimal Prijs { get; set; }
 
         
@@ -17,6 +18,6 @@ namespace OefCsPFPastaPizzaNet
 
     
 
-        public virtual decimal BerekenBedrag { get { return Prijs; } }
+        public  decimal BerekenBedrag { get { return Prijs; } }
     }
 }

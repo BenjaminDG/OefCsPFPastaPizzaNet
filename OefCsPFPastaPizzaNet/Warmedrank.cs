@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using OefCsPFPastaPizzaNet.Enums;
 
 namespace OefCsPFPastaPizzaNet
 {
-    public class Warmedranken: Drank
+    public class Warmedrank: Drank
     {
 
-        public Warmedranken(DrankSoort naam)
+        public Warmedrank(drank naam)
         {
-            if (naam == DrankSoort.koffie || naam == DrankSoort.thee )
+            if (naam == drank.koffie || naam == drank.thee )
             {
                 Naam = naam;
                 Prijs = 2.5M;
@@ -18,7 +19,7 @@ namespace OefCsPFPastaPizzaNet
 
         }
 
-        public override decimal BerekenBedrag { get { return Prijs; } }
+        
 
         public override string ToString() => $"{this.Naam}: {this.Prijs} EUR ";
     }

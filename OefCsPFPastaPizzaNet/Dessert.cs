@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using dessert = OefCsPFPastaPizzaNet.Enums.dessert;
 
 namespace OefCsPFPastaPizzaNet
 {
     public class Dessert: IBedrag
     {
-        public DessertNaam Naam { get; set; }
+        public dessert Naam { get; set; }
         public decimal Prijs { get; set; }
-        public Dessert(DessertNaam naam)
+        public Dessert(dessert naam)
         {
-            if (naam == DessertNaam.Ijs || naam == DessertNaam.Tiramisu) { Naam = naam; Prijs = 3M; }
+            if (naam == dessert.Ijs || naam == dessert.Tiramisu) { Naam = naam; Prijs = 3M; }
             else
             {
-                if (naam == DessertNaam.Cake)
+                if (naam == dessert.Cake)
                 {
                     Naam = naam;
                     Prijs = 2M;

@@ -1,4 +1,4 @@
-﻿namespace OefCsPFPastaPizzaNet
+﻿namespace OefCsPFPastaPizzaNet.Enums
 {
     public enum Grootte
     {
@@ -8,12 +8,12 @@
     {
         brood, kaas, look
     }
-    public enum DrankSoort
+    public enum drank
     {
         water, limonade, cocacola, koffie , thee, geendrank
     }
 
-    public enum DessertNaam
+    public enum dessert
     {
         Tiramisu, Ijs, Cake, geen 
     }
