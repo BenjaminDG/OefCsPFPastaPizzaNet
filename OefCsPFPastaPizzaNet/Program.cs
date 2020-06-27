@@ -30,15 +30,16 @@ namespace OefCsPFPastaPizzaNet
 
             Frisdrank water = new Frisdrank(drank.water);
             Frisdrank cocacola = new Frisdrank(drank.cocacola);
-           Frisdrank geenDrank = new Frisdrank(drank.geendrank);
-
+           
+            Frisdrank limonade = new Frisdrank(drank.limonade);
+           // var frisdrankLijst = new List<drank> { drank.water, drank.cocacola, drank.limonade};
 
             Warmedrank thee = new Warmedrank(drank.thee);
             Warmedrank koffie = new Warmedrank(drank.koffie);
 
-            Dessert ijs = new Dessert(dessert.Ijs);
-            Dessert tiramisu = new Dessert(dessert.Tiramisu);
-            Dessert cake = new Dessert(dessert.Cake);
+            Dessert ijs = new Dessert(dessert.Ijs, 3);
+            Dessert tiramisu = new Dessert(dessert.Tiramisu, 3);
+            Dessert cake = new Dessert(dessert.Cake, 2);
 
             
             Klant JanJanssen = new Klant { KlantID = 1, Naam = "Jan Janssen" };
@@ -55,14 +56,14 @@ namespace OefCsPFPastaPizzaNet
             
             List<Bestelling> Bestellingen = new List<Bestelling>
             {
-                new Bestelling{ besteldGerecht = bestelling1, drank = water, dessert = ijs, Aantal = 2, klant = JanJanssen },
+                new Bestelling{ besteldGerecht = bestelling1,drank = water ,  dessert = ijs, Aantal = 2, klant = JanJanssen },
                 new Bestelling{ besteldGerecht = bestelling2, drank = water, dessert = tiramisu , Aantal = 1 , klant = PP  },
                 new Bestelling{ besteldGerecht = bestelling3, drank = thee, dessert = ijs, Aantal = 1, klant = PP },
-                new Bestelling{ besteldGerecht = bestelling4, drank = geenDrank  ,Aantal = 1 },
+                new Bestelling{ besteldGerecht = bestelling4  ,Aantal = 1 },
                 new Bestelling{ besteldGerecht = bestelling5, drank =cocacola , dessert =null, Aantal = 1, klant = JanJanssen },
                 new Bestelling{ besteldGerecht = bestelling6, drank =cocacola , dessert =cake , Aantal = 1, klant = PP },
                 new Bestelling{ besteldGerecht = null, drank = koffie, dessert= null,  Aantal = 3 , klant = PP  },
-                new Bestelling{drank = geenDrank,dessert = tiramisu ,Aantal=1, klant = JanJanssen}
+                new Bestelling{dessert = tiramisu ,Aantal=1, klant = JanJanssen}
 
             };
 

@@ -2,28 +2,44 @@
 using System.Collections.Generic;
 using System.Text;
 using OefCsPFPastaPizzaNet.Enums;
+using System.Linq;
 
 
 namespace OefCsPFPastaPizzaNet
 {
-    public class Frisdrank :Drank
+    public class Frisdrank : Drank
     {
+        public List<drank> frisdrankLijst {get;set;}
         public Frisdrank(drank naam)
         {
-            if (naam == drank.water || naam == drank.limonade || naam == drank.cocacola)
+            var frisdrankLijst = new List<drank>{ drank.water, drank.cocacola, drank.limonade };
+            var zoekDrankNaam = from frisdrank in frisdrankLijst
+                                where frisdrank == naam
+                                select frisdrank;
+            foreach(var frisdrank in zoekDrankNaam)
+            {
+                if (zoekDrankNaam != null)
+                {
+                    Naam = naam;
+                    Prijs = 2;
+                    
+                }
+                else { throw new Exception("Verkeerde keuze! "); }
+            }
+           
+            
+
+          /*  if (naam == drank.water || naam == drank.limonade || naam == drank.cocacola)
             {
                 Naam = naam;
                 Prijs = 2M;
             }
-            else
-            {
-                if (naam == drank.geendrank)  
-                {
-                    Naam = naam;
-                    Prijs = 0m;
-                }
-            }
-
+            
+            
+                
+                else { throw new Exception("Verkeerde keuze! "); }
+            
+    */
         }
        
 

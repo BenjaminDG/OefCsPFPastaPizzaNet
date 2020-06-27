@@ -47,11 +47,12 @@ namespace OefCsPFPastaPizzaNet
         {
             string klantnaam = klant?.ToString() ?? "Klant : Onbekende klant";
             string dranknaam = drank?.ToString() ?? "drank : **";
+            
             string dessertnaam = dessert?.ToString() ?? "dessert: **" ;
 
            
 
-            return $" Klant: {klantnaam} '\n' {besteldGerecht} '\n' Drank:  {dranknaam} ({drank.Prijs} EUR) Dessert:  {dessertnaam}  Aantal: {Aantal}   Bedrag bestelling: {BerekenBedrag}";   
+            return $" Klant: {klantnaam} '\n' {besteldGerecht} '\n' Drank:  {dranknaam}  Dessert:  {dessertnaam}  Aantal: {Aantal}   Bedrag bestelling: {BerekenBedrag}";   
         }
 
         
