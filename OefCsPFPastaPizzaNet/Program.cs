@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using OefCsPFPastaPizzaNet.Enums;
+using System.Text;
 
 namespace OefCsPFPastaPizzaNet
 {
@@ -12,19 +13,24 @@ namespace OefCsPFPastaPizzaNet
         {
             Pizza margherita = new Pizza { Naam = "Pizza Margherita", Prijs = 8, Onderdelen = new List<string> { "Tomatensaus", "Mozzarella" } };
             Pizza napoli = new Pizza { Naam = "Pizza Napoli", Prijs = 10, Onderdelen = new List<string> { "Tomatensaus", "Mozzarella", "Anjovis", "Kappers", "Olijven" } };
+            Pizza Lardiera = new Pizza { Naam = "Pizza Lardiera", Prijs = 9.5M, Onderdelen = new List<string> {  "Mozzarella","Spek" } };
+            Pizza Vegetariana = new Pizza { Naam = "Pizza Vegetariana", Prijs = 9.5M, Onderdelen = new List<string> {  "Mozzarella", "groenten" } };
 
-
-            Pasta lasagna = new Pasta { Naam = " Lasagna", Prijs = 15.00m };
-            Pasta carbonara = new Pasta { Naam = " Spaghetti Carbonara", Prijs = 13.00m, Omschrijving = " Spek, Roomsaus en Parmezaanse kaas" };
+            Pasta lasagna = new Pasta { Naam = "Lasagna", Prijs = 15.00m };
+            Pasta carbonara = new Pasta { Naam = "Spaghetti Carbonara", Prijs = 13.00m, Omschrijving = " Spek, Roomsaus en Parmezaanse kaas" };
             Pasta bolognese = new Pasta { Naam = "Spaghetti Bolognese", Prijs = 12.00M, Omschrijving = " met gehaktsaus " };
+            Pasta Arrabbiata = new Pasta { Naam = "Penne Arrabiata", Prijs = 14.00M, Omschrijving = " met pittige tomatensaus " };
 
 
-            Gerecht[] lijstgerechten = { margherita, napoli, lasagna, carbonara, bolognese };
+
+            Pizza[] Pizzas = { margherita, napoli, Lardiera, Vegetariana };
+            Pasta[] PastaGerechten = {bolognese, carbonara, Arrabbiata, lasagna };
+            Gerecht[] lijstgerechten = { margherita, napoli,Lardiera ,Vegetariana,lasagna, carbonara, bolognese };
 
 
             Frisdrank water = new Frisdrank(drank.water);
             Frisdrank cocacola = new Frisdrank(drank.cocacola);
-            Frisdrank geenDrank = new Frisdrank(drank.geendrank);
+           Frisdrank geenDrank = new Frisdrank(drank.geendrank);
 
 
             Warmedrank thee = new Warmedrank(drank.thee);
@@ -59,22 +65,163 @@ namespace OefCsPFPastaPizzaNet
                 new Bestelling{drank = geenDrank,dessert = tiramisu ,Aantal=1, klant = JanJanssen}
 
             };
-                
-        
+
+
+            DirectoryConfigreren();
             AlleBestellingenTonen(Bestellingen);
             BestellingenJJTonen(JanJanssen, Bestellingen);
             BestellingenKlantTonen(Bestellingen);
-            
-           
-            //----------------------
+            KlantGegevensWegschrijven(KlantenLijst);
+            GerechtenWegschrijven( PastaGerechten, Pizzas);
+            BestellingenWegschrijven(Bestellingen);
 
 
-            
+            //-----------------------------------
 
-            
 
-            //-------------------
-             static void BestellingenKlantTonen(List<Bestelling> Bestellingen)
+            void BestellingenWegschrijven(List<Bestelling>Bestellingen)
+            {
+                foreach (var bestelling in Bestellingen)
+                {
+                    string locatie = @"C:\Data\OefCsPFPastaPizzaNet\";
+                    StringBuilder BestellingRegel;
+                    try
+                    {
+                        using (var schrijver = new StreamWriter(locatie + "Bestellingen.txt", true))
+                        {
+
+
+                            BestellingRegel = new StringBuilder();
+
+                            if (bestelling.klant == null)
+                            {
+                                BestellingRegel.Append("0#");
+                            }
+                            else { BestellingRegel.Append(bestelling.klant.KlantID + "#"); }
+
+                            if (bestelling.besteldGerecht == null) { BestellingRegel.Append(" # "); }
+                            else { BestellingRegel.Append(bestelling.besteldGerecht.Gerecht.Naam + "--" + bestelling.besteldGerecht.FormaatBesteldGerecht + "--" + bestelling.besteldGerecht.Extra.Count + "--" + string.Join("-", bestelling.besteldGerecht.Extra)); }
+                            if (bestelling.drank == null) { BestellingRegel.Append(" # "); }
+                            else
+                            {
+                                if (bestelling.drank is Frisdrank) { BestellingRegel.Append("F--" + bestelling.drank.Naam + " # "); }
+                                else { BestellingRegel.Append("W--" + bestelling.drank.Naam + " # "); }
+                            }
+                            if (bestelling.dessert == null) { BestellingRegel.Append(" # "); }
+                            else { BestellingRegel.Append(bestelling.dessert.Naam + " # "); }
+                            if (bestelling.Aantal == 0) { BestellingRegel.Append("1"); }
+                            else { BestellingRegel.Append(bestelling.Aantal); }
+                            schrijver.WriteLine(BestellingRegel);
+                        }
+                    }
+                    catch (IOException)
+                    {
+                        Console.WriteLine("Fout bij het schrijven naar het bestand!");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+
+                }
+            }
+
+
+                //-------------------------------------
+
+                void KlantGegevensWegschrijven(Klant []klantenLijst)
+            {
+                foreach (var klant in klantenLijst)
+                {
+                    string locatie = @"C:\Data\OefCsPFPastaPizzaNet\";
+                    StringBuilder KlantRegel;
+                    try
+                    {
+                        using (var schrijver = new StreamWriter(locatie + "Klanten.txt", true))
+                        {
+                            KlantRegel = new StringBuilder();
+                            KlantRegel.Append(klant.KlantID + " # " + klant.Naam);
+                            schrijver.WriteLine(KlantRegel);
+                        }
+                    }
+                    catch (IOException)
+                    {
+                        Console.WriteLine("Fout bij het schrijven naar het bestand!");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+            }
+            //--------------------------------------
+
+            void GerechtenWegschrijven( Pasta[] PastaGerechten, Pizza[] Pizzas )
+            {
+                foreach (var pizza in Pizzas)
+                {
+
+
+                    string locatie = @"C:\Data\OefCsPFPastaPizzaNet\";
+                    StringBuilder GerechtRegel;
+                    try
+                    {
+                        using (var schrijver = new StreamWriter(locatie + "Gerechten.txt", true))
+                        {
+
+
+                            GerechtRegel = new StringBuilder();
+                            
+                            GerechtRegel.Append( "Pizza: " +  " # " + pizza.Naam + String.Join("# ", pizza.Onderdelen) + "#" +pizza.Prijs +"#" );
+                            
+                            schrijver.WriteLine(GerechtRegel);
+                        }
+                    }
+                    catch (IOException)
+                    {
+                        Console.WriteLine("Fout bij het schrijven naar het bestand!");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+
+                foreach (var pastaGerecht in PastaGerechten)
+                {
+
+
+                    string locatie = @"C:\Data\OefCsPFPastaPizzaNet\";
+                    StringBuilder GerechtRegel;
+                    try
+                    {
+                        using (var schrijver = new StreamWriter(locatie + "Gerechten.txt", true))
+                        {
+
+
+                            GerechtRegel = new StringBuilder();
+
+                            GerechtRegel.Append("Pasta: " + " # " + pastaGerecht.Naam +"#"+ pastaGerecht.Prijs + "#" +String.Join("# ", pastaGerecht.Omschrijving ) + "#" );
+
+                            schrijver.WriteLine(GerechtRegel);
+                        }
+                    }
+                    catch (IOException)
+                    {
+                        Console.WriteLine("Fout bij het schrijven naar het bestand!");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+
+            }
+
+
+
+            //------------------------------------
+            static void BestellingenKlantTonen(List<Bestelling> Bestellingen)
             {
                 decimal totaalBedrag = 0;
                 var perKlant =
@@ -134,7 +281,25 @@ namespace OefCsPFPastaPizzaNet
             }
 
             //---------------
-            
+
+
+            static void DirectoryConfigreren()
+            {
+                string directorynaam = @"C:\Data\OefCsPFPastaPizzaNet\";
+
+                if (!Directory.Exists(directorynaam))
+                {
+
+                    Console.WriteLine($"De directory {directorynaam} bestaat niet.");
+                    Console.WriteLine("De directory wordt gecreëerd");
+                    Directory.CreateDirectory(directorynaam);
+
+                }
+
+
+            }
+
+
         }
     }
 }
