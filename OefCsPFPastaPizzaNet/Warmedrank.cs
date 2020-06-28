@@ -24,7 +24,7 @@ namespace OefCsPFPastaPizzaNet
                     Prijs = 2.5m;
 
                 }
-                else { throw new Exception("Verkeerde keuze! "); }
+                else { throw new DrankErrorException("Verkeerde keuze! ", naam); }
             }
 
             /*

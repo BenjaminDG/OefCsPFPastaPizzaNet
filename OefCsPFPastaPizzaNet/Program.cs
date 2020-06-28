@@ -68,7 +68,7 @@ namespace OefCsPFPastaPizzaNet
             };
 
 
-            DirectoryConfigreren();
+           // DirectoryConfigreren();
             AlleBestellingenTonen(Bestellingen);
             BestellingenJJTonen(JanJanssen, Bestellingen);
             BestellingenKlantTonen(Bestellingen);
@@ -84,7 +84,7 @@ namespace OefCsPFPastaPizzaNet
             {
                 foreach (var bestelling in Bestellingen)
                 {
-                    string locatie = @"C:\Data\OefCsPFPastaPizzaNet\";
+                    string locatie = DirectoryConfiguratie.DirectoryNaam(@"C:\Data\OefCsPFPastaPizzaNet\");
                     StringBuilder BestellingRegel;
                     try
                     {
@@ -134,7 +134,7 @@ namespace OefCsPFPastaPizzaNet
             {
                 foreach (var klant in klantenLijst)
                 {
-                    string locatie = @"C:\Data\OefCsPFPastaPizzaNet\";
+                    string locatie = DirectoryConfiguratie.DirectoryNaam(@"C:\Data\OefCsPFPastaPizzaNet\"); ;
                     StringBuilder KlantRegel;
                     try
                     {
@@ -163,7 +163,7 @@ namespace OefCsPFPastaPizzaNet
                 {
 
 
-                    string locatie = @"C:\Data\OefCsPFPastaPizzaNet\";
+                    string locatie = DirectoryConfiguratie.DirectoryNaam(@"C:\Data\OefCsPFPastaPizzaNet\"); ;
                     StringBuilder GerechtRegel;
                     try
                     {
@@ -192,7 +192,7 @@ namespace OefCsPFPastaPizzaNet
                 {
 
 
-                    string locatie = @"C:\Data\OefCsPFPastaPizzaNet\";
+                    string locatie = DirectoryConfiguratie.DirectoryNaam(@"C:\Data\OefCsPFPastaPizzaNet\"); 
                     StringBuilder GerechtRegel;
                     try
                     {
@@ -284,7 +284,7 @@ namespace OefCsPFPastaPizzaNet
             //---------------
 
 
-            static void DirectoryConfigreren()
+            /*static void DirectoryConfigreren()
             {
                 string directorynaam = @"C:\Data\OefCsPFPastaPizzaNet\";
 
@@ -298,7 +298,7 @@ namespace OefCsPFPastaPizzaNet
                 }
 
 
-            }
+            }*/
 
 
         }

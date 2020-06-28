@@ -31,7 +31,7 @@ namespace OefCsPFPastaPizzaNet
 
             void GerechtenLezen()
             {
-                string locatie = @"C:\Data\OefCsPFPastaPizzaNet\";
+                string locatie = DirectoryConfiguratie.DirectoryNaam( @"C:\Data\OefCsPFPastaPizzaNet\");
                 
                 string GerechtRegel;
 
@@ -55,8 +55,8 @@ namespace OefCsPFPastaPizzaNet
 
              static void KlantenLezen()
             {
-                string locatie = @"C:\Data\OefCsPFPastaPizzaNet\";
-                
+                string locatie = DirectoryConfiguratie.DirectoryNaam(@"C:\Data\OefCsPFPastaPizzaNet\");
+
                 string KlantRegel;
 
 
@@ -80,8 +80,8 @@ namespace OefCsPFPastaPizzaNet
 
             void BestellingenLezen()
             {
-                string locatie = @"C:\Data\OefCsPFPastaPizzaNet\";
-                
+                string locatie = DirectoryConfiguratie.DirectoryNaam(@"C:\Data\OefCsPFPastaPizzaNet\");
+
                 string BestellingRegel;
 
 
