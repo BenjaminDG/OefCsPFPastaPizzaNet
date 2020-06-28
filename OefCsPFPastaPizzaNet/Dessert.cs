@@ -31,17 +31,6 @@ namespace OefCsPFPastaPizzaNet
                 else { throw new Exception("Verkeerde keuze! "); }
             }
 
-
-            /*if (naam == dessert.Ijs || naam == dessert.Tiramisu) { Naam = naam; Prijs = 3M; }
-            else
-            {
-                if (naam == dessert.Cake)
-                {
-                    Naam = naam;
-                    Prijs = 2M;
-                }
-       
-            }*/
         }
 
             public  decimal BerekenBedrag { get { return Prijs; } }

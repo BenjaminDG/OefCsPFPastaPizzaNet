@@ -9,10 +9,7 @@ namespace OefCsPFPastaPizzaNet
 {
     public class Frisdrank : Drank
     {
-        //public List<drank> frisdrankLijst {get;set;}
         
-        
-
         public Frisdrank(drank naam)
         {
             var frisdrankLijst = new List<drank>{ drank.water, drank.cocacola, drank.limonade };
@@ -31,18 +28,6 @@ namespace OefCsPFPastaPizzaNet
             }
            
             
-
-          /*  if (naam == drank.water || naam == drank.limonade || naam == drank.cocacola)
-            {
-                Naam = naam;
-                Prijs = 2M;
-            }
-            
-            
-                
-                else { throw new Exception("Verkeerde keuze! "); }
-            
-    */
         }
        
 

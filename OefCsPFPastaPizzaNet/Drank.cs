@@ -21,15 +21,10 @@ namespace OefCsPFPastaPizzaNet
                 VerkeerdeDrank = verkeerdeDrank;
             }
 
-
         }
         
         public override string ToString()
         {
-            
-
-
-
             return $"{this.Naam}: {this.Prijs} EUR";
         }
 

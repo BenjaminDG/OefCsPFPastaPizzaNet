@@ -284,22 +284,6 @@ namespace OefCsPFPastaPizzaNet
             //---------------
 
 
-            /*static void DirectoryConfigreren()
-            {
-                string directorynaam = @"C:\Data\OefCsPFPastaPizzaNet\";
-
-                if (!Directory.Exists(directorynaam))
-                {
-
-                    Console.WriteLine($"De directory {directorynaam} bestaat niet.");
-                    Console.WriteLine("De directory wordt gecreëerd");
-                    Directory.CreateDirectory(directorynaam);
-
-                }
-
-
-            }*/
-
 
         }
     }
