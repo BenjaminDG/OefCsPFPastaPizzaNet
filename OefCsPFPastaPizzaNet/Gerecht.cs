@@ -5,6 +5,7 @@ using System.IO;
 
 namespace OefCsPFPastaPizzaNet
 {
+    [Serializable]
     public abstract class Gerecht : IBedrag
     {
         public string Naam { get; set; }

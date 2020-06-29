@@ -6,6 +6,7 @@ using System.IO;
 
 namespace OefCsPFPastaPizzaNet
 {
+    [Serializable]
     public class Pasta: Gerecht
     {
         public String Omschrijving { get; set; }

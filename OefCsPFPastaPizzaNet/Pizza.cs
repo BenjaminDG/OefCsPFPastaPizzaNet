@@ -5,6 +5,7 @@ using System.IO;
 
 namespace OefCsPFPastaPizzaNet
 {
+    [Serializable]
     public class Pizza: Gerecht
     {
         public List<string> Onderdelen { get; set; }

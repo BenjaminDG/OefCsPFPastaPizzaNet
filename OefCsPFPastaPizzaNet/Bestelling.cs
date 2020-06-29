@@ -4,7 +4,7 @@ using System.Text;
 using System.IO;
 
 namespace OefCsPFPastaPizzaNet
-{
+{   [Serializable]
     public class Bestelling : IBedrag
     {
         public Klant klant { get; set; }

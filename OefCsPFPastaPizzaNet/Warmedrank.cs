@@ -6,6 +6,7 @@ using System.Linq;
 
 namespace OefCsPFPastaPizzaNet
 {
+    [Serializable]
     public class Warmedrank: Drank
     {
 

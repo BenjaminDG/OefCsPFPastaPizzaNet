@@ -8,6 +8,7 @@ using System.Runtime.Serialization.Json;
 
 namespace OefCsPFPastaPizzaNet
 {
+    [Serializable]
     public class Dessert: IBedrag
     {
         public dessert Naam { get; set; }

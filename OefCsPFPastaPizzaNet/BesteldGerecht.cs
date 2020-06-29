@@ -5,9 +5,11 @@ using OefCsPFPastaPizzaNet.Enums;
 
 namespace OefCsPFPastaPizzaNet
 {
+    [Serializable]
     public class BesteldGerecht  : IBedrag
     {
         
+
         public Gerecht Gerecht { get; set; }
         public Grootte FormaatBesteldGerecht {get; set;  }
 

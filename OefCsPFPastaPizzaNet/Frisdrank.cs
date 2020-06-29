@@ -7,6 +7,7 @@ using System.Linq;
 
 namespace OefCsPFPastaPizzaNet
 {
+    [Serializable]
     public class Frisdrank : Drank
     {
         

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 
 namespace OefCsPFPastaPizzaNet
 {
@@ -27,6 +29,11 @@ namespace OefCsPFPastaPizzaNet
             Console.WriteLine("  ");
             BestellingenLezen();
             Console.WriteLine("-------------- ");
+            
+
+
+            
+
 
 
             void GerechtenLezen()
@@ -101,10 +108,23 @@ namespace OefCsPFPastaPizzaNet
                 catch (Exception ex) { Console.WriteLine(ex.Message); }
 
             }
-            
-            
 
 
+           /* void BestellingObjectInlezen()
+            {
+                try
+                {
+                    using (var bestand = File.Open((@"C:\Data\OefCsPFPastaPizzaNet\Bestellingen.obj"), FileMode.Open, FileAccess.Read))
+                    {
+                        var lezer = new BinaryFormatter();
+                        Bestellingen = (List<Bestelling>)lezer.Deserialize(bestand);
+                        foreach (var bestelling in Bestellingen)
+                        {
+                            Console.WriteLine(bestelling);
+                        }
+                    }
+                }
+            }*/
 
 
 

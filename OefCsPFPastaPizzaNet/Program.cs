@@ -4,17 +4,19 @@ using System.Linq;
 using System.IO;
 using OefCsPFPastaPizzaNet.Enums;
 using System.Text;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 
 namespace OefCsPFPastaPizzaNet
 {
-   public class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Pizza margherita = new Pizza { Naam = "Pizza Margherita", Prijs = 8, Onderdelen = new List<string> { "Tomatensaus", "Mozzarella" } };
             Pizza napoli = new Pizza { Naam = "Pizza Napoli", Prijs = 10, Onderdelen = new List<string> { "Tomatensaus", "Mozzarella", "Anjovis", "Kappers", "Olijven" } };
-            Pizza Lardiera = new Pizza { Naam = "Pizza Lardiera", Prijs = 9.5M, Onderdelen = new List<string> {  "Mozzarella","Spek" } };
-            Pizza Vegetariana = new Pizza { Naam = "Pizza Vegetariana", Prijs = 9.5M, Onderdelen = new List<string> {  "Mozzarella", "groenten" } };
+            Pizza Lardiera = new Pizza { Naam = "Pizza Lardiera", Prijs = 9.5M, Onderdelen = new List<string> { "Mozzarella", "Spek" } };
+            Pizza Vegetariana = new Pizza { Naam = "Pizza Vegetariana", Prijs = 9.5M, Onderdelen = new List<string> { "Mozzarella", "groenten" } };
 
             Pasta lasagna = new Pasta { Naam = "Lasagna", Prijs = 15.00m };
             Pasta carbonara = new Pasta { Naam = "Spaghetti Carbonara", Prijs = 13.00m, Omschrijving = " Spek, Roomsaus en Parmezaanse kaas" };
@@ -24,15 +26,15 @@ namespace OefCsPFPastaPizzaNet
 
 
             Pizza[] Pizzas = { margherita, napoli, Lardiera, Vegetariana };
-            Pasta[] PastaGerechten = {bolognese, carbonara, Arrabbiata, lasagna };
-            Gerecht[] lijstgerechten = { margherita, napoli,Lardiera ,Vegetariana,lasagna, carbonara, bolognese };
+            Pasta[] PastaGerechten = { bolognese, carbonara, Arrabbiata, lasagna };
+            Gerecht[] lijstgerechten = { margherita, napoli, Lardiera, Vegetariana, lasagna, carbonara, bolognese };
 
 
             Frisdrank water = new Frisdrank(drank.water);
             Frisdrank cocacola = new Frisdrank(drank.cocacola);
-           
+
             Frisdrank limonade = new Frisdrank(drank.limonade);
-           // var frisdrankLijst = new List<drank> { drank.water, drank.cocacola, drank.limonade};
+            // var frisdrankLijst = new List<drank> { drank.water, drank.cocacola, drank.limonade};
 
             Warmedrank thee = new Warmedrank(drank.thee);
             Warmedrank koffie = new Warmedrank(drank.koffie);
@@ -41,11 +43,11 @@ namespace OefCsPFPastaPizzaNet
             Dessert tiramisu = new Dessert(dessert.Tiramisu, 3);
             Dessert cake = new Dessert(dessert.Cake, 2);
 
-            
+
             Klant JanJanssen = new Klant { KlantID = 1, Naam = "Jan Janssen" };
             Klant PP = new Klant { KlantID = 2, Naam = "Piet Peeters" };
             Klant[] KlantenLijst = { JanJanssen, PP };
-            
+
 
             BesteldGerecht bestelling1 = new BesteldGerecht { Gerecht = margherita, FormaatBesteldGerecht = Grootte.groot, Extra = new List<Extra> { Extra.kaas, Extra.look } };
             BesteldGerecht bestelling2 = new BesteldGerecht { Gerecht = margherita, FormaatBesteldGerecht = Grootte.klein, Extra = new List<Extra> { } };
@@ -53,7 +55,7 @@ namespace OefCsPFPastaPizzaNet
             BesteldGerecht bestelling4 = new BesteldGerecht { Gerecht = lasagna, FormaatBesteldGerecht = Grootte.klein, Extra = new List<Extra> { Extra.look } };
             BesteldGerecht bestelling5 = new BesteldGerecht { Gerecht = carbonara, FormaatBesteldGerecht = Grootte.klein, Extra = new List<Extra> { } };
             BesteldGerecht bestelling6 = new BesteldGerecht { Gerecht = bolognese, FormaatBesteldGerecht = Grootte.groot, Extra = new List<Extra> { Extra.kaas } };
-            
+
             List<Bestelling> Bestellingen = new List<Bestelling>
             {
                 new Bestelling{ besteldGerecht = bestelling1,drank = water ,  dessert = ijs, Aantal = 2, klant = JanJanssen },
@@ -68,19 +70,20 @@ namespace OefCsPFPastaPizzaNet
             };
 
 
-           // DirectoryConfigreren();
+            // DirectoryConfigreren();
             AlleBestellingenTonen(Bestellingen);
             BestellingenJJTonen(JanJanssen, Bestellingen);
             BestellingenKlantTonen(Bestellingen);
             KlantGegevensWegschrijven(KlantenLijst);
-            GerechtenWegschrijven( PastaGerechten, Pizzas);
+            GerechtenWegschrijven(PastaGerechten, Pizzas);
             BestellingenWegschrijven(Bestellingen);
+            BestellingObjectWegschrijvenEnInlezen(Bestellingen);
 
 
             //-----------------------------------
 
 
-            void BestellingenWegschrijven(List<Bestelling>Bestellingen)
+            void BestellingenWegschrijven(List<Bestelling> Bestellingen)
             {
                 foreach (var bestelling in Bestellingen)
                 {
@@ -128,9 +131,9 @@ namespace OefCsPFPastaPizzaNet
             }
 
 
-                //-------------------------------------
+            //-------------------------------------
 
-                void KlantGegevensWegschrijven(Klant []klantenLijst)
+            void KlantGegevensWegschrijven(Klant[] klantenLijst)
             {
                 foreach (var klant in klantenLijst)
                 {
@@ -157,7 +160,7 @@ namespace OefCsPFPastaPizzaNet
             }
             //--------------------------------------
 
-            void GerechtenWegschrijven( Pasta[] PastaGerechten, Pizza[] Pizzas )
+            void GerechtenWegschrijven(Pasta[] PastaGerechten, Pizza[] Pizzas)
             {
                 foreach (var pizza in Pizzas)
                 {
@@ -172,9 +175,9 @@ namespace OefCsPFPastaPizzaNet
 
 
                             GerechtRegel = new StringBuilder();
-                            
-                            GerechtRegel.Append( "Pizza: " +  " # " + pizza.Naam + String.Join("# ", pizza.Onderdelen) + "#" +pizza.Prijs +"#" );
-                            
+
+                            GerechtRegel.Append("Pizza: " + " # " + pizza.Naam + String.Join("# ", pizza.Onderdelen) + "#" + pizza.Prijs + "#");
+
                             schrijver.WriteLine(GerechtRegel);
                         }
                     }
@@ -192,7 +195,7 @@ namespace OefCsPFPastaPizzaNet
                 {
 
 
-                    string locatie = DirectoryConfiguratie.DirectoryNaam(@"C:\Data\OefCsPFPastaPizzaNet\"); 
+                    string locatie = DirectoryConfiguratie.DirectoryNaam(@"C:\Data\OefCsPFPastaPizzaNet\");
                     StringBuilder GerechtRegel;
                     try
                     {
@@ -202,7 +205,7 @@ namespace OefCsPFPastaPizzaNet
 
                             GerechtRegel = new StringBuilder();
 
-                            GerechtRegel.Append("Pasta: " + " # " + pastaGerecht.Naam +"#"+ pastaGerecht.Prijs + "#" +String.Join("# ", pastaGerecht.Omschrijving ) + "#" );
+                            GerechtRegel.Append("Pasta: " + " # " + pastaGerecht.Naam + "#" + pastaGerecht.Prijs + "#" + String.Join("# ", pastaGerecht.Omschrijving) + "#");
 
                             schrijver.WriteLine(GerechtRegel);
                         }
@@ -283,7 +286,46 @@ namespace OefCsPFPastaPizzaNet
 
             //---------------
 
+           
+            static void BestellingObjectWegschrijvenEnInlezen(List<Bestelling>Bestellingen)
+            {
+                try
+                {
+                    using (var bestand = File.Open(@"C:\Data\OefCsPFPastaPizzaNet\Bestellingen.obj", FileMode.OpenOrCreate))
+                    {
 
+                        var schrijver = new BinaryFormatter();
+                        schrijver.Serialize(bestand, Bestellingen);
+                        Console.WriteLine("object bestellingen weggeschreven");
+
+                    }
+                    using (var bestand = File.Open((@"C:\Data\OefCsPFPastaPizzaNet\Bestellingen.obj"), FileMode.Open, FileAccess.Read))
+                    {
+                        var lezer = new BinaryFormatter();
+                        Bestellingen = (List<Bestelling>)lezer.Deserialize(bestand);
+                        Console.WriteLine("-------------");
+                        Console.WriteLine("object bestellingen ingelezen");
+                        foreach (var bestelling in Bestellingen)
+                        {
+                            Console.WriteLine(bestelling);
+                        }
+
+                    }
+
+                }
+                catch (IOException)
+                {
+                    throw new Exception("Fout bij het openen van het bestand!");
+                }
+                catch (SerializationException)
+                {
+                    Console.WriteLine("Fout bij het serialiseren/deserialiseren");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
 
         }
     }

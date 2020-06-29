@@ -5,6 +5,7 @@ using drank = OefCsPFPastaPizzaNet.Enums.drank;
 
 namespace OefCsPFPastaPizzaNet
 {
+    [Serializable]
     public class Drank: IBedrag
     {
         public drank Naam { get; set; }

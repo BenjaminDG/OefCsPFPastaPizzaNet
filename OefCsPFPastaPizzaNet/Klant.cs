@@ -5,8 +5,8 @@ using System.Text;
 
 namespace OefCsPFPastaPizzaNet
 {
-    
-     public class Klant
+    [Serializable]
+    public class Klant
     {
         public int KlantID { get; set; }
         public string Naam { get; set; }
