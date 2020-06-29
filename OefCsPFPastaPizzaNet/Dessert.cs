@@ -16,12 +16,12 @@ namespace OefCsPFPastaPizzaNet
         {
 
             var dessertLijst = new List<dessert> { dessert.Cake, dessert.Ijs, dessert.Tiramisu};
-            var zoekDrankNaam = from dessert in dessertLijst
+            var zoekDessertNaam = from dessert in dessertLijst
                                 where dessert == naam
                                 select dessert;
-            foreach (var frisdrank in zoekDrankNaam)
+            foreach (var frisdrank in zoekDessertNaam)
             {
-                if (zoekDrankNaam != null)
+                if (zoekDessertNaam != null)
                 {
                     
                     Naam = naam;
