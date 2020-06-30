@@ -39,9 +39,9 @@ namespace OefCsPFPastaPizzaNet
             Warmedrank thee = new Warmedrank(drank.thee);
             Warmedrank koffie = new Warmedrank(drank.koffie);
 
-            Dessert ijs = new Dessert(dessert.Ijs, 3);
-            Dessert tiramisu = new Dessert(dessert.Tiramisu, 3);
-            Dessert cake = new Dessert(dessert.Cake, 2);
+            Dessert ijs = new Dessert(dessert.Ijs);
+            Dessert tiramisu = new Dessert(dessert.Tiramisu);
+            Dessert cake = new Dessert(dessert.Cake);
 
 
             Klant JanJanssen = new Klant { KlantID = 1, Naam = "Jan Janssen" };
@@ -77,7 +77,7 @@ namespace OefCsPFPastaPizzaNet
             KlantGegevensWegschrijven(KlantenLijst);
             GerechtenWegschrijven(PastaGerechten, Pizzas);
             BestellingenWegschrijven(Bestellingen);
-            BestellingObjectWegschrijvenEnInlezen(Bestellingen);
+            
 
 
             //-----------------------------------
@@ -103,16 +103,16 @@ namespace OefCsPFPastaPizzaNet
                             }
                             else { BestellingRegel.Append(bestelling.klant.KlantID + "#"); }
 
-                            if (bestelling.besteldGerecht == null) { BestellingRegel.Append(" # "); }
-                            else { BestellingRegel.Append(bestelling.besteldGerecht.Gerecht.Naam + "--" + bestelling.besteldGerecht.FormaatBesteldGerecht + "--" + bestelling.besteldGerecht.Extra.Count + "--" + string.Join("-", bestelling.besteldGerecht.Extra)); }
-                            if (bestelling.drank == null) { BestellingRegel.Append(" # "); }
+                            if (bestelling.besteldGerecht == null) { BestellingRegel.Append("#"); }
+                            else { BestellingRegel.Append(bestelling.besteldGerecht.Gerecht.Naam  + "-"+bestelling.besteldGerecht.FormaatBesteldGerecht +"-" + bestelling.besteldGerecht.Extra.Count + "-" + string.Join("-", bestelling.besteldGerecht.Extra) + "#" ); }
+                            if (bestelling.drank == null) { BestellingRegel.Append("#"); }
                             else
                             {
-                                if (bestelling.drank is Frisdrank) { BestellingRegel.Append("F--" + bestelling.drank.Naam + " # "); }
-                                else { BestellingRegel.Append("W--" + bestelling.drank.Naam + " # "); }
+                                if (bestelling.drank is Frisdrank) { BestellingRegel.Append("F-"+ bestelling.drank.Naam + "#"); }
+                                else { BestellingRegel.Append("W-" + bestelling.drank.Naam + "#"); }
                             }
-                            if (bestelling.dessert == null) { BestellingRegel.Append(" # "); }
-                            else { BestellingRegel.Append(bestelling.dessert.Naam + " # "); }
+                            if (bestelling.dessert == null) { BestellingRegel.Append("*#"); }
+                            else { BestellingRegel.Append(bestelling.dessert.Naam + "#"); }
                             if (bestelling.Aantal == 0) { BestellingRegel.Append("1"); }
                             else { BestellingRegel.Append(bestelling.Aantal); }
                             schrijver.WriteLine(BestellingRegel);
@@ -176,7 +176,7 @@ namespace OefCsPFPastaPizzaNet
 
                             GerechtRegel = new StringBuilder();
 
-                            GerechtRegel.Append("Pizza: " + " # " + pizza.Naam + String.Join("# ", pizza.Onderdelen) + "#" + pizza.Prijs + "#");
+                            GerechtRegel.Append("Pizza" + "#" + pizza.Naam + "#" +pizza.Prijs + "#" + String.Join(", ", pizza.Onderdelen));
 
                             schrijver.WriteLine(GerechtRegel);
                         }
@@ -205,7 +205,7 @@ namespace OefCsPFPastaPizzaNet
 
                             GerechtRegel = new StringBuilder();
 
-                            GerechtRegel.Append("Pasta: " + " # " + pastaGerecht.Naam + "#" + pastaGerecht.Prijs + "#" + String.Join("# ", pastaGerecht.Omschrijving) + "#");
+                            GerechtRegel.Append("Pasta" + "#" + pastaGerecht.Naam + "#" + pastaGerecht.Prijs + "#" + String.Join(", ", pastaGerecht.Omschrijving) + "#");
 
                             schrijver.WriteLine(GerechtRegel);
                         }
@@ -287,45 +287,7 @@ namespace OefCsPFPastaPizzaNet
             //---------------
 
            
-            static void BestellingObjectWegschrijvenEnInlezen(List<Bestelling>Bestellingen)
-            {
-                try
-                {
-                    using (var bestand = File.Open(@"C:\Data\OefCsPFPastaPizzaNet\Bestellingen.obj", FileMode.OpenOrCreate))
-                    {
-
-                        var schrijver = new BinaryFormatter();
-                        schrijver.Serialize(bestand, Bestellingen);
-                        Console.WriteLine("object bestellingen weggeschreven");
-
-                    }
-                    using (var bestand = File.Open((@"C:\Data\OefCsPFPastaPizzaNet\Bestellingen.obj"), FileMode.Open, FileAccess.Read))
-                    {
-                        var lezer = new BinaryFormatter();
-                        Bestellingen = (List<Bestelling>)lezer.Deserialize(bestand);
-                        Console.WriteLine("-------------");
-                        Console.WriteLine("object bestellingen ingelezen");
-                        foreach (var bestelling in Bestellingen)
-                        {
-                            Console.WriteLine(bestelling);
-                        }
-
-                    }
-
-                }
-                catch (IOException)
-                {
-                    throw new Exception("Fout bij het openen van het bestand!");
-                }
-                catch (SerializationException)
-                {
-                    Console.WriteLine("Fout bij het serialiseren/deserialiseren");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-            }
+            
 
         }
     }

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <StartupObject>OefCsPFPastaPizzaNet.Program</StartupObject>
+    <StartupObject>OefCsPFPastaPizzaNet.program2</StartupObject>
   </PropertyGroup>
 
 </Project>

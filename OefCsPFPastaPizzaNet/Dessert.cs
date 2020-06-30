@@ -13,20 +13,20 @@ namespace OefCsPFPastaPizzaNet
     {
         public dessert Naam { get; set; }
         public decimal Prijs { get; set; }
-        public Dessert(dessert naam, decimal prijs)
+        public Dessert(dessert naam)
         {
 
             var dessertLijst = new List<dessert> { dessert.Cake, dessert.Ijs, dessert.Tiramisu};
             var zoekDessertNaam = from dessert in dessertLijst
                                 where dessert == naam
                                 select dessert;
-            foreach (var frisdrank in zoekDessertNaam)
+            foreach (var dessert in zoekDessertNaam)
             {
                 if (zoekDessertNaam != null)
                 {
                     
                     Naam = naam;
-                    Prijs = prijs;
+                  if ( dessert == dessert.Cake) { Prijs = 2m; } else { Prijs = 3M; }
 
                 }
                 else { throw new Exception("Verkeerde keuze! "); }
